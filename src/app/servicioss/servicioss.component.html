@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="servicios-container">
+        <h1>Servicios e Inyección de Dependencias en Angular</h1>
+        <p>
+          En Angular, los servicios son una forma de organizar y compartir datos y lógica entre componentes. A menudo, los servicios son utilizados para realizar tareas como la comunicación con una API, gestión de datos o compartir estados entre componentes.
+        </p>
+        <hr class="separador-1">
+      
+        <h2>¿Qué es un Servicio?</h2>
+        <p>
+          Un servicio es una clase de TypeScript que contiene lógica de negocio y se utiliza para compartir funcionalidades comunes entre diferentes partes de tu aplicación. Los servicios permiten que el código esté más organizado y reutilizable.
+        </p>
+        
+        <h2>Inyección de Dependencias</h2>
+        <p>
+          Angular utiliza un patrón conocido como **Inyección de Dependencias (DI)** para gestionar los servicios y sus dependencias. DI es un patrón que permite que los objetos sean creados e inyectados en las clases que los necesitan sin que estas clases tengan que encargarse de crearlos.
+        </p>
+      
+        <h3>Creando un Servicio</h3>
+        <p>
+          Para crear un servicio en Angular, puedes usar el siguiente comando en la terminal:
+        </p>
+        <pre>
+          ng generate service nombre-del-servicio
+        </pre>
+        <p>
+          Esto creará un archivo de servicio en la carpeta `src/app` de tu proyecto. Un servicio básico podría lucir como esto:
+        </p>
+      
+        <h4>Ejemplo de un Servicio</h4>
+        <p>
+          Aquí tienes un ejemplo de un servicio que proporciona datos de productos:
+        </p>
+        <pre>
+          <span class="comentario">// producto.service.ts</span>
+          
+        </pre>
+      
+        <h3>Inyectando el Servicio en un Componente</h3>
+        <p>
+          Una vez que tienes tu servicio creado, puedes inyectarlo en un componente utilizando el constructor del componente. Por ejemplo:
+        </p>
+        <pre>
+          <span class="comentario">// app.component.ts</span>
+         
+        </pre>
+      
+        <p>
+          En este caso, el servicio <strong>ProductoService</strong> es inyectado en el componente <strong>AppComponent</strong> a través del constructor. Luego, el método <strong>obtenerProductos()</strong> es utilizado para obtener una lista de productos.
+        </p>
+      
+        <h3>El Decorador &#64;Injectable</h3>
+        <p>
+          El decorador <strong>&#64;Injectable()</strong> se utiliza para marcar la clase de servicio como inyectable. Esto permite que Angular gestione la instancia del servicio y la inyecte en otros componentes o servicios cuando sea necesario. El decorador <strong>providedIn: 'root'</strong> significa que el servicio está disponible de forma global en toda la aplicación.
+        </p>
+      
+        <h2>Servicios con Dependencias</h2>
+        <p>
+          Un servicio puede tener dependencias que también deben ser inyectadas. Por ejemplo, si tu servicio necesita realizar peticiones HTTP, puedes inyectar el servicio <strong>HttpClient</strong> de Angular en tu servicio:
+        </p>
+        <pre>
+          <span class="comentario">// producto.service.ts</span>
+         
+        </pre>
+      
+        <p>
+          En este ejemplo, el servicio <strong>HttpClient</strong> se inyecta en el servicio <strong>ProductoService</strong> para realizar una solicitud HTTP y obtener productos desde una API externa.
+        </p>
+      
+        <h3>Uso de Servicios en el HTML</h3>
+        <p>
+          Una vez que el servicio está inyectado en el componente, los datos del servicio pueden ser utilizados en el HTML. Por ejemplo, para mostrar los productos obtenidos en la vista:
+        </p>
+        <pre>
+          
+        </pre>
+      
+        <h2>Resumen</h2>
+        <ul>
+          <li>Los servicios son clases que proporcionan funcionalidades reutilizables.</li>
+          <li>Angular usa la Inyección de Dependencias (DI) para gestionar la creación y uso de los servicios.</li>
+          <li>El decorador <strong>&#64;Injectable</strong> marca una clase como inyectable.</li>
+          <li>Los servicios pueden tener dependencias como el servicio <strong>HttpClient</strong> para realizar peticiones HTTP.</li>
+        </ul>
+      </div>
+      
+</body>
+</html>
+  

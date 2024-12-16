@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directivas</title>
+</head>
+<body>
+    <div class="directivas-container">
+        <h1>Directivas en Angular</h1>
+        <p>
+          En Angular, las **directivas** son instrucciones que puedes añadir a los elementos HTML para alterar su comportamiento o apariencia. Estas son esenciales para trabajar con el DOM de forma declarativa, ya que permiten controlar dinámicamente qué se muestra y cómo se comportan los elementos en la interfaz de usuario.
+        </p>
+        <hr class="separador">
+      
+        <h2>¿Qué son las Directivas?</h2>
+        <p>
+          Las directivas son componentes clave de Angular que extienden el HTML con nuevas funcionalidades. Al usarlas, puedes:
+        </p>
+        <ul>
+          <li>Controlar la visibilidad de elementos.</li>
+          <li>Aplicar estilos y clases de manera dinámica.</li>
+          <li>Repetir elementos basados en datos.</li>
+          <li>Crear comportamientos personalizados reutilizables.</li>
+        </ul>
+        <p>
+          Las directivas en Angular se clasifican en tres tipos principales: 
+          <strong>Estructurales</strong>, <strong>de Atributo</strong>, y <strong>Personalizadas</strong>.
+        </p>
+      
+        <h2>Tipos de Directivas</h2>
+        <hr class="separador">
+      
+        <h3>1. Directivas Estructurales</h3>
+        <p>
+          Las directivas estructurales cambian el diseño del DOM al agregar o eliminar elementos según ciertas condiciones. Aquí tienes ejemplos de las más comunes:
+        </p>
+        <hr>
+        <h4>*ngIf</h4>
+        <p>
+          La directiva <strong>*ngIf</strong> permite mostrar u ocultar un elemento basado en una condición booleana. Por ejemplo:
+        </p>
+        <pre><code>
+    &lt;div *ngIf=&#34;mostrarTexto&#34;&gt;
+
+Este texto se muestra solo si la variable &#39;mostrarTexto&#39; es verdadera.<br />
+    &lt;button (click)=&#34;mostrarTexto = !mostrarTexto&#34;&gt;Alternar Texto&lt;/button&gt;
+          </code></pre>
+<p>En este caso, el botón alterna la visibilidad del texto dinámicamente.
+        </p>
+        <hr>
+        <h4>*ngFor</h4>
+        <p>
+          La directiva <strong>*ngFor</strong> permite iterar sobre una lista de datos para renderizar múltiples elementos. Ejemplo:
+        </p>
+<pre><code>
+&lt;ul&gt;<br />
+&nbsp;&nbsp;&lt;li *ngFor=&#34;let producto of productos&#34;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&#123; &#123; producto.nombre &#125;&#125; - Precio: &#123; &#123; producto.precio &#125;&#125;<br />
+&nbsp;&nbsp;&lt;/li&gt;<br />
+&lt;/ul&gt;
+</code></pre>
+        <p>
+          Aquí, una lista de productos en el componente se convierte en elementos HTML.
+        </p>
+        <hr>
+        <h4>*ngSwitch</h4>
+        <p>
+          La directiva <strong>*ngSwitch</strong> se usa cuando necesitas renderizar elementos basándote en múltiples condiciones. Ejemplo:
+        </p>
+        <code>
+          &lt;div [ngSwitch]=&#34;estado&#34;&gt;<br />
+          &nbsp;&nbsp;&lt;p *ngSwitchCase=&#39;activo&#39;&gt;El estado es Activo&lt;/p&gt;<br />
+          &nbsp;&nbsp;&lt;p *ngSwitchCase=&#39;inactivo&#39;&gt;El estado es Inactivo&lt;/p&gt;<br />
+          &nbsp;&nbsp;&lt;p *ngSwitchDefault&gt;Estado desconocido&lt;/p&gt;<br />
+          &lt;/div&gt;
+        </code>
+        <p>Esto muestra diferentes mensajes dependiendo del valor de la variable <code>estado</code>.</p>
+      <hr class="separador">
+        <h3>2. Directivas de Atributo</h3>
+        <p>
+          Estas directivas modifican el comportamiento o la apariencia de un elemento HTML aplicando estilos, clases o propiedades de forma dinámica.
+        </p>
+        <hr>
+        <h4>ngClass</h4>
+        <p>
+          La directiva <strong>ngClass</strong> permite asignar clases CSS basándose en condiciones:
+        </p>
+        <pre><code>
+            &lt;div [ngClass]=&#34;&#123;&#39;activo&#39;: esActivo, &#39;inactivo&#39;: !esActivo&#125;&#34;&gt;<br />
+            &nbsp;&nbsp;Este elemento tiene clases dinámicas.<br />
+            &lt;/div&gt;<br />
+            &lt;button (click)=&#34;esActivo = !esActivo&#34;&gt;Alternar Estado&lt;/button&gt;
+          </code></pre>
+        <p>En este caso, la clase <code>activo</code> o <code>inactivo</code> se aplica dinámicamente según el estado de <code>esActivo</code>.</p>
+          <hr>
+        <h4>ngStyle</h4>
+        <p>
+          La directiva <strong>ngStyle</strong> permite aplicar estilos en línea dinámicamente:
+        </p>
+        <pre><code>
+            &lt;div [ngStyle]=&#34;&#123;&#39;background-color&#39;: color, &#39;font-size&#39;: tamano&#125;&#34;&gt;<br />
+            &nbsp;&nbsp;Este texto tiene estilos dinámicos.<br />
+            &lt;/div&gt;<br />
+            &lt;button (click)=&#34;color = &#39;blue&#39;; tamano = &#39;20px&#39;&#34;&gt;Cambiar Estilos&lt;/button&gt;
+          </code></pre>
+        <hr class="separador">
+        <h3>3. Directivas Personalizadas</h3>
+        <p>
+          Puedes crear tus propias directivas para implementar comportamientos específicos. Un ejemplo es una directiva que resalta un elemento cuando el mouse pasa sobre él:
+        </p>
+        <pre><code>
+// directiva: resaltar.directive.ts<br />
+import &#123; Directive, ElementRef, Renderer2, HostListener &#125; from &#39;&#64;angular/core&#39;;<br /><br />
+&#64;Directive(&#123;<br />
+&nbsp;&nbsp;selector: &#39;[appResaltar]&#39;<br />
+&#125;)<br />
+export class ResaltarDirective &#123;<br />
+&nbsp;&nbsp;constructor(private el: ElementRef, private renderer: Renderer2) &#123;&#125;<br /><br />
+&nbsp;&nbsp;&#64;HostListener(&#39;mouseenter&#39;) onMouseEnter() &#123;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;this.renderer.setStyle(this.el.nativeElement, &#39;background-color&#39;, &#39;yellow&#39;);<br />
+&nbsp;&nbsp;&#125;<br /><br />
+&nbsp;&nbsp;&#64;HostListener(&#39;mouseleave&#39;) onMouseLeave() &#123;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;this.renderer.removeStyle(this.el.nativeElement, &#39;background-color&#39;);<br />
+&nbsp;&nbsp;&#125;<br />
+&#125;
+          </code></pre>
+        <p>
+          Ahora puedes usar la directiva en tu HTML:
+        </p>
+        <pre><code>
+&lt;p appResaltar&gt;Pasa el mouse sobre este texto para resaltarlo.&lt;/p&gt;
+          </code></pre>
+      </div>
+      
+      
+    
+</body>
+</html>

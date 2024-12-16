@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="proyecto-container">
+        <h1 class="proyecto-title">Componentes en Angular</h1>
+        <p class="proyecto-description">
+          Los componentes son los bloques fundamentales de cualquier aplicación Angular. Cada componente es una combinación de un template (HTML), una clase (TS) y unos estilos (CSS). Estos permiten que la aplicación sea modular y fácil de mantener.
+        </p>
+        <hr class="separador-1">
+      
+        <section class="estructura">
+          <h2 class="section-title">&#8594; ¿Qué son los Componentes?</h2>
+          <p>
+            En Angular, los componentes son la unidad básica de la interfaz de usuario. Cada componente define una vista que se muestra al usuario. Cada componente consta de tres partes principales:
+          </p>
+          <ul>
+            <li><strong>&#x25aa;&#xfe0f;Clase (TypeScript):</strong> Define la lógica del componente, es donde se manipulan los datos y se definen las funciones.</li>
+            <li><strong>&#x25aa;&#xfe0f;Template (HTML):</strong> Define la estructura visual del componente, es decir, lo que el usuario ve.</li>
+            <li><strong>&#x25aa;&#xfe0f;Estilos (CSS):</strong> Define los estilos visuales de la vista (opcional, pero recomendado para mejorar la apariencia).</li>
+          </ul>
+      
+          <h3 class="subsection-title">Estructura de un Componente</h3>
+          <p>
+            La estructura básica de un componente en Angular consiste en tres archivos principales:
+          </p>
+          <ul>
+            <li><code>componente.component.ts</code>: Archivo TypeScript que contiene la lógica del componente.</li>
+            <li><code>componente.component.html</code>: Archivo HTML que contiene la vista o la estructura visual.</li>
+            <li><code>componente.component.css</code>: Archivo CSS que define los estilos del componente.</li>
+          </ul>
+      
+          <p>Un componente básico puede verse así:</p>
+      
+          <!-- Bloque de código -->
+          <pre><code>
+    
+          </code></pre>
+
+          <hr>
+      
+          <h3 class="subsection-title">1. La Clase (TS)</h3>
+          <p>
+            La clase del componente contiene toda la lógica y los datos necesarios para su funcionamiento. En Angular, la clase se define utilizando el decorador <code>&#64;Component</code>, que se encarga de asociar la clase con su template y estilos.
+          </p>
+          <pre><code>
+     
+      
+          </code></pre>
+          <hr>
+      
+          <h3 class="subsection-title">2. El Template (HTML)</h3>
+          <p>
+            El template de un componente es el archivo HTML donde se define la estructura de la interfaz de usuario. El template puede contener componentes hijos, directivas, y binding de datos.
+          </p>
+          <pre><code>
+          </code></pre>
+          <hr>
+      
+          <h3 class="subsection-title">3. Los Estilos (CSS)</h3>
+          <p>
+            Los estilos se aplican a través del archivo <code>componente.component.css</code>. Los estilos son encapsulados de manera predeterminada, lo que significa que solo afectarán al componente en cuestión y no a otros componentes de la aplicación.
+          </p>
+          <pre><code>
+   
+          </code></pre>
+          <hr class="separador-1">
+          <h2 class="section-title">&#8594; Creando un Componente en Angular</h2>
+          <p>Para crear un nuevo componente en Angular, puedes utilizar el comando <code>ng generate component nombre-componente</code> o <code>ng g c nombre-componente</code> en la terminal.</p>
+      
+          <pre><code>
+  ng generate component my-component
+          </code></pre>
+          
+      
+          <p>Este comando generará automáticamente cuatro archivos para el componente:</p>
+          <ul>
+            <li><code>my-component.component.ts</code>: La clase del componente.</li>
+            <li><code>my-component.component.html</code>: El template del componente.</li>
+            <li><code>my-component.component.css</code>: Los estilos del componente.</li>
+            <li><code>my-component.component.spec.ts</code>: El archivo de pruebas para el componente (opcional).</li>
+          </ul>
+      
+          <h3 class="subsection-title">Uso de un Componente</h3>
+          <p>
+            Una vez que hayas creado un componente, puedes usarlo en el template de otros componentes. Para esto, simplemente debes agregar el selector del componente como una etiqueta HTML dentro del template de otro componente.
+          </p>
+      
+          <pre><code>
+      <!-- Usando el componente en otro archivo HTML -->
+          </code></pre>
+      
+          <h3 class="subsection-title">Enlace de Datos (Data Binding)</h3>
+          <p>
+            Uno de los aspectos más poderosos de Angular es el enlace de datos, que permite conectar la lógica de la clase del componente con su vista (HTML). Existen varias formas de enlace de datos en Angular:
+          </p>
+          <ul>
+            <li><strong>&#x25aa;&#xfe0f;Interpolación (&#123; &#123; &#125;&#125;)</strong>: Para mostrar valores de la clase en el template.</li>
+            <li><strong>&#x25aa;&#xfe0f;Property Binding ([ ]):</strong> Para enlazar propiedades HTML con propiedades de la clase.</li>
+            <li><strong>&#x25aa;&#xfe0f;Event Binding ( ( ) ): </strong> Para enlazar eventos de la vista con métodos de la clase.</li>
+            <li><strong>&#x25aa;&#xfe0f;Two-Way Binding ( [( )] ): </strong> Para crear una comunicación bidireccional entre la vista y la clase.</li>
+          </ul>
+          <hr class="separador-1">
+          <h2 class="section-title">&#8594; Conclusión</h2>
+          <p>
+            Los componentes son el núcleo de cualquier aplicación Angular. Te permiten construir interfaces de usuario modulares y reutilizables. Comprender cómo trabajar con ellos es esencial para desarrollar aplicaciones Angular efectivas y bien estructuradas.
+          </p>
+        </section>
+      </div>
+</body>
+</html>

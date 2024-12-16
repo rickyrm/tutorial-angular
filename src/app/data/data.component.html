@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Binding</title>
+</head>
+<body>
+    <div class="data-binding-container">
+        <h1>Data Binding en Angular</h1>
+        <p>
+          El <strong>Data Bindgin</strong> en Angular es un mecanismo que permite la sincronización de datos entre el modelo y la vista. Angular proporciona diferentes formas de enlazar datos, que son fundamentales para el desarrollo de aplicaciones dinámicas.
+        </p>
+      
+        <h2>Tipos de Data Binding</h2>
+      
+        <h3>1. Interpolation (Interpolación)</h3>
+        <p>
+          La interpolación permite mostrar datos en la vista mediante una expresión encerrada entre llaves dobles <code></code>.
+        </p>
+        <code>
+          
+        </code>
+        <p>
+          Por ejemplo, para mostrar un valor desde el componente en la plantilla:
+        </p>
+        <code>
+          <pre>
+    </pre>
+        </code>
+        <code>
+          <pre>
+      <h1>Hola, </h1>
+          </pre>
+        </code>
+      
+        <h3>2. Property Binding</h3>
+        <p>
+          En el *Property Binding*, usamos corchetes <code>[ ]</code> para vincular propiedades HTML con propiedades del componente.
+        </p>
+        <code>
+          <pre>
+
+          </pre>
+        </code>
+        <p>Esto asegura que cualquier cambio en la propiedad del componente actualice automáticamente la vista.</p>
+      
+        <h3>3. Event Binding</h3>
+        <p>
+          En el *Event Binding*, usamos paréntesis <code>( )</code> para vincular eventos de la vista con métodos del componente.
+        </p>
+        <code>
+          <pre>
+    
+          </pre>
+        </code>
+        <p>El método definido en el componente manejará el evento:</p>
+        <code>
+          <pre>
+          </pre>
+        </code>
+      
+        <h3>4. Two-Way Binding (Vinculación Bidireccional)</h3>
+        <p>
+          El *Two-Way Binding* permite sincronizar datos en ambas direcciones: del componente a la vista y viceversa. Esto se logra combinando <code>[ ]</code> y <code>( )</code>, utilizando la directiva <code>ngModel</code>.
+        </p>
+        <code>
+          <pre>
+          </pre>
+        </code>
+        <p>Asegúrate de importar <code>FormsModule</code> en el módulo para usar <code>ngModel</code>.</p>
+      </div>
+      
+    
+</body>
+</html>
