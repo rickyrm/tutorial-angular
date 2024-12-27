@@ -42,17 +42,18 @@
   }
   
   pre {
-    background-color: #f4f4f4;
-    padding: 10px;
+    background-color: #5f5d5d;
+    padding: 15px;
     border-radius: 4px;
     overflow-x: auto;
     font-size: 0.9rem;
-    color: #333;
-    max-width: 700px;
+    text-align: left;
+    max-width: 400px;
     margin-bottom: 20px;
+    margin-left: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
-    box-shadow: 0px 1px 1px black;
+    box-shadow: 0px 3px 3px black;
   }
 
   .separador-1 {

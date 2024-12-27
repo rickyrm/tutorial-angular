@@ -12,12 +12,13 @@
           La estructura de un proyecto Angular está diseñada para ser escalable y organizada. 
           Te ayuda a mantener un código limpio, modular y fácil de mantener. Aquí se explican las carpetas y archivos principales que encontrarás al crear un nuevo proyecto Angular.
         </p>
+        <hr class="separador-1">
       
         <section class="estructura">
-          <h2 class="section-title">Estructura de Carpetas y Archivos</h2>
+          <h2 class="section-title">&#8594; Estructura de Carpetas y Archivos</h2>
           <p>Al crear un nuevo proyecto Angular con el comando <code>ng new nombre-del-proyecto</code>, Angular genera una serie de carpetas y archivos predeterminados. Esta es la estructura básica del proyecto:</p>
       
-          <pre><code>
+          <pre><code class="language-markup">
 src/
 app/
     app.component.css
@@ -32,12 +33,13 @@ assets/
     tsconfig.json
           </code></pre>
       
-          <h3 class="subsection-title">1. Carpeta <code>src/</code></h3>
+          <h3 class="subsection-title">1. Carpeta <strong>src/</strong></h3>
           <p>
             La carpeta <code>src/</code> es donde reside el código fuente de la aplicación. Dentro de esta carpeta, encontrarás varios subdirectorios que contienen todo lo necesario para que tu aplicación funcione.
           </p>
+          <hr>
       
-          <h3 class="subsection-title">2. Carpeta <code>app/</code></h3>
+          <h3 class="subsection-title">2. Carpeta <strong>app/</strong></h3>
           <p>
             La carpeta <code>app/</code> es la más importante de todas, ya que contiene los componentes, servicios y módulos principales de la aplicación.
           </p>
@@ -46,13 +48,15 @@ assets/
             <li><strong>app.component.html:</strong> Es el archivo HTML de la raíz, que generalmente contiene la estructura básica de la página y el <code>&lt;router-outlet&gt;</code>.</li>
             <li><strong>app.module.ts:</strong> Este archivo es el módulo principal de la aplicación. Aquí se definen los componentes, servicios y módulos importados.</li>
           </ul>
+          <hr>
       
-          <h3 class="subsection-title">3. Carpeta <code>assets/</code></h3>
+          <h3 class="subsection-title">3. Carpeta <strong>assets/</strong></h3>
           <p>
             En esta carpeta se colocan todos los recursos estáticos de la aplicación, como imágenes, fuentes, archivos de datos, etc.
           </p>
+          <hr>
       
-          <h3 class="subsection-title">4. Carpeta <code>environments/</code></h3>
+          <h3 class="subsection-title">4. Carpeta <strong>environments/</strong></h3>
           <p>
             La carpeta <code>environments/</code> contiene los archivos de configuración para diferentes entornos de ejecución, como desarrollo y producción.
           </p>
@@ -60,6 +64,7 @@ assets/
             <li><strong>environment.ts:</strong> Configuración para el entorno de desarrollo.</li>
             <li><strong>environment.prod.ts:</strong> Configuración para el entorno de producción.</li>
           </ul>
+          <hr>
       
           <h3 class="subsection-title">5. Archivos principales</h3>
           <p>
@@ -72,18 +77,19 @@ assets/
             <li><strong>tsconfig.json:</strong> Archivo de configuración de TypeScript, donde se definen las opciones del compilador.</li>
           </ul>
         </section>
+        <hr>
       
         <section class="subestructura">
-          <h2 class="section-title">Modularidad en Angular</h2>
+          <h2 class="section-title">&#8594; Modularidad en Angular</h2>
           <p>
             Angular está basado en un sistema modular, lo que significa que los componentes, servicios y otros elementos de la aplicación están organizados en módulos. Esto mejora la organización del código y facilita la reutilización.
           </p>
-          
+          <hr class="separador-1">
           <h3 class="subsection-title">1. ¿Qué es un Módulo?</h3>
           <p>
             Un módulo en Angular es un conjunto de componentes, servicios y otros elementos relacionados. El módulo principal es el <code>AppModule</code>, pero puedes crear módulos adicionales para organizar el código de manera más eficiente.
           </p>
-          <pre><code>
+          <pre><code class="language-markup">
 &#64;NgModule&#40;&#123;
   declarations: [AppComponent],
   imports: [BrowserModule],
@@ -97,11 +103,13 @@ export class AppModule &#123; &#125;
           <p>
             En proyectos grandes, puedes crear módulos específicos para funcionalidades, como un módulo de usuarios, un módulo de productos, etc. Cada uno de estos módulos puede tener su propio conjunto de componentes, directivas y servicios.
           </p>
+          <hr>
       
           <h3 class="subsection-title">3. Modularización con Lazy Loading</h3>
           <p>
             Angular permite usar "Lazy Loading" para cargar módulos de manera diferida, lo que ayuda a mejorar el rendimiento de la aplicación cargando solo lo necesario cuando el usuario lo necesita.
           </p>
+        
         </section>
       </div>
       

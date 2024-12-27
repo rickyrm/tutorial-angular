@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 
-body{
-    background-color: #492e53b2;
+body {
+    background-color: #492e537c;
+    background-image: url('https://cdn-media-2.freecodecamp.org/w1280/5f9c9cfc740569d1a4ca3543.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el cuerpo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la pantalla */
 }
+
 li {
     text-align: center;
     color: transparent;
@@ -13,7 +18,7 @@ h1 {
 }
 
 a {
-    color: rgb(231, 222, 222);
+    color: rgba(224, 214, 214, 0.836);
 
 }
 
@@ -37,4 +42,26 @@ nav {
 
 .navbar{
     background-color: #492e53b2;
+}
+
+footer {
+  background-color: white;
+  padding: 10px 20px; /* Reduce el padding para que no sea tan grande */
+  border-radius: 1px;
+  box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto Mono', sans-serif;
+  height: 80px;
+  margin: 20px 0;/* Ajusta la altura del footer */ /* Esto asegura que el footer se quede en la parte inferior */
+  text-align: center;
+
+}
+
+.footer-links a {
+  color: #222323;
+
+  
+}
+
+.footer-links a:hover {
+  color: #d68d8ddc;
 }

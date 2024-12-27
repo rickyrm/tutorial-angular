@@ -30,7 +30,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/proyecto" routerLinkActive="active">| Proyecto</a>
+              <a class="nav-link" routerLink="/home" routerLinkActive="active">| Instalación</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/primerospasos" routerLinkActive="active">| Primeros pasos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/utilizacion" routerLinkActive="active">| Utilización</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/funcionamiento" routerLinkActive="active">| Funcionamiento</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/componentes" routerLinkActive="active">| Componentes</a>
@@ -66,4 +75,21 @@
   ></script>
   <router-outlet></router-outlet>
 </body>
+<footer>
+  <div>
+    &copy; 2024 Ricardo Rivero Martín. Todos los derechos reservados.
+  </div>
+  <div class="footer-links">
+    <a routerLink="/home" routerLinkActive="active">Instalación</a> |
+    <a routerLink="/primerospasos" routerLinkActive="active">Primeros pasos</a> |
+    <a routerLink="/utilizacion" routerLinkActive="active">Utilización</a> |
+    <a routerLink="/funcionamiento" routerLinkActive="active">Funcionamiento</a> |
+    <a routerLink="/componentes" routerLinkActive="active">Componentes</a> |
+    <a routerLink="/data" routerLinkActive="active">Data Binding</a> |
+    <a routerLink="/directiva" routerLinkActive="active">Directivas</a> |
+    <a routerLink="/navegacion" routerLinkActive="active">Navegación</a> |
+    <a routerLink="/servicios" routerLinkActive="active">Servicios</a>
+  </div>
+</footer>
+
 </html>

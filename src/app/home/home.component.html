@@ -1,47 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Instalación de Angular</title>
 </head>
 <body>
     <div class="home-container">
-        <h1 class="home-title">Bienvenido al Tutorial de Angular</h1>
-        <p class="home-description">
-          Angular es un framework de desarrollo de aplicaciones web desarrollado por Google. 
-          Está basado en TypeScript y permite crear aplicaciones SPA (Single Page Applications) de forma estructurada y escalable.
-        </p>
-      
-        <section class="installation">
-          <h2 class="section-title">¿Qué necesitas para empezar?</h2>
-          <ul class="requirements-list">
-            <li>Node.js (incluye npm) - <a href="https://nodejs.org/" target="_blank">Descargar Node.js</a></li>
-            <li>Editor de texto - Recomendado: <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
-            <li>Un navegador web (como Chrome o Firefox).</li>
-          </ul>
-      
-          <h2 class="section-title">Instalación de Angular</h2>
-          <p>Para instalar Angular CLI, sigue estos pasos:</p>
-          <ol class="installation-steps">
-            <li>Asegúrate de que <strong>Node.js</strong> está instalado correctamente. Puedes verificarlo ejecutando:
-              <pre><code>node -v</code></pre>
-            </li>
-            <li>Instala Angular CLI globalmente con el siguiente comando:
-              <pre><code>npm install -g &#64;angular/cli</code></pre>
-            </li>
-            <li>Crea un nuevo proyecto Angular:
-              <pre><code>ng new nombre-del-proyecto</code></pre>
-            </li>
-            <li>Accede al proyecto y ejecuta el servidor:
-              <pre><code>cd nombre-del-proyecto<br>ng serve</code></pre>
-            </li>
-            <li>Abre el navegador en <a href="http://localhost:4200" target="_blank">http://localhost:4200</a>.</li>
+        <h1 class="home-title">Instalación de Angular</h1>
+        
+        <section class="installation-details">
+          <h2 class="section-title">&#8594; Detalles de la instalación</h2>
+
+          <hr>
+          <h3>¿Se precisa instalación?</h3>
+          <p>Sí, para trabajar con Angular es necesario instalar Angular CLI (Command Line Interface), Node.js y npm (Node Package Manager), que permiten crear, gestionar y ejecutar aplicaciones Angular.</p>
+          <hr>
+          <h3>¿Qué pasos hay que realizar para realizar la instalación?</h3>
+          <p>Los pasos necesarios son los siguientes:</p>
+          <ol>
+            <li><strong>Instalar Node.js:</strong> Descargue e instale Node.js desde <a href="https://nodejs.org/" target="_blank">su página oficial</a>.</li>
+            <li><strong>Instalar Angular CLI:</strong> Abra la terminal o línea de comandos y ejecute el comando: <pre><code>npm install -g &#64;angular/cli</code></pre></li>
+            <li><strong>Crea un nuevo proyecto:</strong> Ejecute el comando <pre><code>ng new nombre-del-proyecto</code></pre> para crear el proyecto y configurar la estructura inicial.</li>
+            <li><strong>Ejecutar el servidor:</strong> Acceda al directorio del proyecto con <pre><code>cd nombre-del-proyecto</code></pre> y ejecute <pre><code>ng serve</code></pre> para iniciar el servidor de desarrollo.</li>
+            <li><strong>Accede a la aplicación:</strong> Abre tu navegador en <a href="http://localhost:4200" target="_blank">http://localhost:4200</a> para ver la aplicación en ejecución.</li>
           </ol>
+          <hr>
+
+          <h3>¿Versiones necesarias?</h3>
+          <p>Es recomendable utilizar las siguientes versiones:</p>
+          <ul>
+            <li><strong>Node.js</strong>: La versión LTS (Long Term Support), que puede consultarse en <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</li>
+            <li><strong>Angular CLI</strong>: La última versión estable, que puede instalarse mediante <pre><code>npm install -g &#64;angular/cli</code></pre>.</li>
+          </ul>
+          <hr>
+          <h3>¿Rutas para tener en cuenta?</h3>
+          <p>Las rutas principales a tener en cuenta son:</p>
+          <ul>
+            <li><strong>Proyecto raíz:</strong> La carpeta que contiene todos los archivos del proyecto Angular, generada con <code>ng new nombre-del-proyecto</code>.</li>
+            <li><strong>src/app:</strong> Carpeta donde se encuentran los componentes, módulos y servicios de la aplicación Angular.</li>
+            <li><strong>src/environments:</strong> Aquí se configuran las variables de entorno para los entornos de desarrollo y producción.</li>
+            <li><strong>public:</strong> Archivos públicos como el archivo <code>index.html</code> que se sirve a través del servidor.</li>
+          </ul>
+          <hr>
+          <h3>¿Variables de entorno?</h3>
+          <p>Angular utiliza archivos de configuración en <code>src/environments/</code> para gestionar variables de entorno, como la configuración para los entornos de desarrollo y producción.</p>
+          <p>En el archivo <code>src/environments/environment.ts</code> puedes definir variables para el entorno de desarrollo, mientras que en <code>src/environments/environment.prod.ts</code> puedes configurar valores específicos para producción.</p>
+          <hr>
+          <h3>¿Necesita base de datos?</h3>
+          <p>No, Angular no requiere una base de datos para su funcionamiento. Sin embargo, las aplicaciones Angular suelen interactuar con una base de datos a través de servicios web, como APIs RESTful, para gestionar los datos. El backend puede ser cualquier tecnología que proporcione estas APIs, como Node.js con Express, Java Spring Boot, o incluso servicios de terceros.</p>
         </section>
-      </div>
+    </div>
 </body>
-<footer>
-  <div>Footer</div>
-</footer>
 </html>
