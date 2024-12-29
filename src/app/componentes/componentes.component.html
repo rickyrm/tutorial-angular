@@ -37,7 +37,19 @@
           <p>Un componente básico puede verse así:</p>
       
           <!-- Bloque de código -->
-          <pre><code>
+          <pre><code class="code-1">
+import &#123; Component &#125; from &#39;&#64;angular/core&#39;;
+
+&#64;Component(&#123;
+  selector: &#39;app-mi-componente&#39;,
+  templateUrl: &#39;./mi-componente.component.html&#39;,
+  styleUrls: &#39;./mi-componente.component.css&#39;
+&#125;)
+export class MiComponenteComponent &#123;
+  titulo: string = &#39;Hola Mundo&#39;;
+
+  constructor() &#123; &#125;
+&#125; 
     
           </code></pre>
 
@@ -47,8 +59,20 @@
           <p>
             La clase del componente contiene toda la lógica y los datos necesarios para su funcionamiento. En Angular, la clase se define utilizando el decorador <code>&#64;Component</code>, que se encarga de asociar la clase con su template y estilos.
           </p>
-          <pre><code>
-     
+          <pre><code class="code-1">
+import &#123; Component &#125; from &#39;&#64;angular/core&#39;;
+
+&#64;Component(&#123;
+selector: &#39;app-mi-componente&#39;,
+templateUrl: &#39;./mi-componente.component.html&#39;,
+styleUrls: &#39;./mi-componente.component.css&#39;&#125;)
+export class MiComponenteComponent &#123;
+mensaje: string = &#39;Este es un componente de ejemplo&#39;;
+
+mostrarMensaje() &#123;
+console.log(&#123; &#123;this.mensaje&#125;&#125;);
+  &#125;
+&#125;
       
           </code></pre>
           <hr>
@@ -57,7 +81,11 @@
           <p>
             El template de un componente es el archivo HTML donde se define la estructura de la interfaz de usuario. El template puede contener componentes hijos, directivas, y binding de datos.
           </p>
-          <pre><code>
+          <pre><code class="code-1">
+&lt;div&gt;
+&lt;h1&gt;&#123; &#123; titulo &#125;&#125;&lt;/h1&gt;
+&lt;button (click)=&#34;mostrarMensaje()&#34;&gt;Mostrar mensaje&lt;/button&gt;
+&lt;/div&gt;
           </code></pre>
           <hr>
       
@@ -65,14 +93,23 @@
           <p>
             Los estilos se aplican a través del archivo <code>componente.component.css</code>. Los estilos son encapsulados de manera predeterminada, lo que significa que solo afectarán al componente en cuestión y no a otros componentes de la aplicación.
           </p>
-          <pre><code>
+          <pre><code class="code-1">
+h1 &#123;
+  color: blue;
+&#125;
+
+button &#123;
+  background-color: green;
+  color: white;
+  padding: 10px;
+&#125;
    
           </code></pre>
           <hr class="separador-1">
           <h2 class="section-title">&#8594; Creando un Componente en Angular</h2>
           <p>Para crear un nuevo componente en Angular, puedes utilizar el comando <code>ng generate component nombre-componente</code> o <code>ng g c nombre-componente</code> en la terminal.</p>
       
-          <pre><code>
+          <pre><code class="code-1">
   ng generate component my-component
           </code></pre>
           
@@ -90,8 +127,8 @@
             Una vez que hayas creado un componente, puedes usarlo en el template de otros componentes. Para esto, simplemente debes agregar el selector del componente como una etiqueta HTML dentro del template de otro componente.
           </p>
       
-          <pre><code>
-      <!-- Usando el componente en otro archivo HTML -->
+          <pre><code class="code-1">
+  &lt;app-mi-componente&gt;&lt;/app-mi-componente&gt;
           </code></pre>
       
           <h3 class="subsection-title">Enlace de Datos (Data Binding)</h3>
@@ -104,11 +141,6 @@
             <li><strong>&#x25aa;&#xfe0f;Event Binding ( ( ) ): </strong> Para enlazar eventos de la vista con métodos de la clase.</li>
             <li><strong>&#x25aa;&#xfe0f;Two-Way Binding ( [( )] ): </strong> Para crear una comunicación bidireccional entre la vista y la clase.</li>
           </ul>
-          <hr class="separador-1">
-          <h2 class="section-title">&#8594; Conclusión</h2>
-          <p>
-            Los componentes son el núcleo de cualquier aplicación Angular. Te permiten construir interfaces de usuario modulares y reutilizables. Comprender cómo trabajar con ellos es esencial para desarrollar aplicaciones Angular efectivas y bien estructuradas.
-          </p>
         </section>
       </div>
 </body>

@@ -1,60 +1,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-.data-binding-container {
-    background-color: #f1f1f1c5;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-    margin-bottom: 0;
-    box-shadow: 0px 4px 6px #0000001a;
-    font-family: 'Roboto Mono', sans-serif;
-  }
-  
-  .data-binding-container h1 {
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  .data-binding-container h2 {
-    color: #333;
-    font-size: 1.5rem;
-    margin-top: 20px;
-  }
-  
-  .data-binding-container h3 {
-    color: #555;
-    font-size: 1.2rem;
-    margin-top: 15px;
-  }
-  
-  .data-binding-container p {
-    color: #555;
-    margin-bottom: 15px;
-  }
-  
 
-  .data-binding-container pre {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border-radius: 4px;
-    overflow-x: auto;
-    font-size: 0.9rem;
-    color: #333;
-    max-width: 400px;
-    margin-bottom: 20px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    box-shadow: 0px 1px 1px black;
-  }
-  
-  .data-binding-container ul {
-    margin-left: 20px;
-    color: #555;
-  }
-  
-  .data-binding-container li {
-    margin-bottom: 10px;
-  }
+/* Fondo */
+.conclusion-container {
+  flex: 1; /* Esto hace que el contenedor ocupe el espacio disponible */
+  background-color: #f1f1f1c7;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+  margin-bottom: 0;
+  box-shadow: 0px 4px 6px #0000001a;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+/* Título principal */
+.conclusion-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Descripción */
+.conclusion-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+/* Sección de instalación */
+.section-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Lista de requisitos */
+.requirements-list {
+  list-style-type: disc;
+  margin: 10px 0 10px 20px;
+  color: #353535;
+}
+
+.requirements-list li {
+  margin-bottom: 8px;
+}
+
+.requirements-list a {
+  color: #429df8;
+  text-decoration: none;
+}
+
+.requirements-list a:hover {
+  text-decoration: underline;
+}
+
+/* Pasos de instalación */
+.installation-steps {
+  margin: 15px 0 15px 20px;
+  color: #333;
+}
+
+.installation-steps li {
+  margin-bottom: 15px;
+}
+
+p {
+  color: #333;
+}
+
+pre {
+  background-color: #5f5d5d;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  color: #fffbfb;
+  max-width: 600px; /* Ajusta el ancho máximo */
+  margin-bottom: 20px; /* Espaciado entre bloques */
+  word-wrap: break-word; /* Ajusta el contenido en palabras largas */
+  box-shadow: 0px 3px 3px black;
+}
+
+pre code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Enlaces */
+a {
+  color: #0066cc;
+}
+
+a:hover {
+  color: #004499;
+}
+
+.separador-1 {
+  border: 0;  /* Elimina el borde predeterminado */
+  height: 4px;  /* Establece el grosor de la línea */
+  background-color: #000000;  /* Establece el color de la línea */
+  margin-top: 20px;  /* Espaciado encima de la línea */
+  margin-bottom: 20px;  /* Espaciado debajo de la línea */
+}
+
+/* Ajustes de diseño */
+hr {
+  border: 1px solid #111111;
+  margin: 30px 0;
+}
   

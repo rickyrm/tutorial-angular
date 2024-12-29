@@ -7,38 +7,38 @@
 </head>
 <body>
     <div class="routing-container">
-        <h1>Enrutamiento y Navegación en Angular</h1>
+        <h1 class="routing-title">Enrutamiento y Navegación en Angular</h1>
         <p>
           Angular ofrece un sistema robusto para gestionar la navegación entre vistas en aplicaciones de una sola página (SPA). 
-          Este sistema se basa en el uso del **Router** y las **Rutas** para determinar qué componente se debe mostrar 
+          Este sistema se basa en el uso del <strong>Router</strong> y las <strong>Rutas</strong> para determinar qué componente se debe mostrar 
           según la URL actual.
         </p>
         <hr class="separador">
       
-        <h2>¿Qué es el Enrutamiento?</h2>
+        <h2>&#8594; ¿Qué es el Enrutamiento?</h2>
         <p>
           El enrutamiento en Angular es un mecanismo que permite a los usuarios navegar por diferentes vistas de la aplicación. 
           Se logra configurando rutas en el archivo <code>app-routing.module.ts</code> y usando el componente <code>RouterOutlet</code>.
         </p>
       
-        <h2>Configurando el Enrutamiento</h2>
+        <h2>&#8594; Configurando el Enrutamiento</h2>
         <p>Los pasos básicos para configurar el enrutamiento en una aplicación Angular son los siguientes:</p>
         <ol>
           <li>
-            **Importar el Módulo de Enrutamiento**: Angular incluye un módulo llamado <code>RouterModule</code> que se utiliza para configurar las rutas.
+            <strong>Importar el Módulo de Enrutamiento:</strong> Angular incluye un módulo llamado <code>RouterModule</code> que se utiliza para configurar las rutas.
           </li>
           <li>
-            **Definir las Rutas**: En el archivo <code>app-routing.module.ts</code>, defines las rutas de tu aplicación.
+            <strong>Definir las Rutas: </strong>En el archivo <code>app-routing.module.ts</code>, defines las rutas de tu aplicación.
           </li>
           <li>
-            **Agregar el <code>RouterOutlet</code>**: Este componente se utiliza en el archivo HTML para indicar dónde se cargarán las vistas.
+            <strong>Agregar el <code>RouterOutlet</code>:</strong> Este componente se utiliza en el archivo HTML para indicar dónde se cargarán las vistas.
           </li>
         </ol>
       
         <h3>Ejemplo de Configuración</h3>
         <p>Un ejemplo básico de configuración de rutas podría ser:</p>
         <pre>
-          <code>
+          <code class="code-1">
       import &#123; NgModule &#125; from &#39;&#64;angular/core&#39;;
       import &#123; RouterModule, Routes &#125; from &#39;&#64;angular/router&#39;;
       import &#123; HomeComponent &#125; from &#39;./home/home.component&#39;;
@@ -57,7 +57,7 @@
           </code>
         </pre>
       
-        <h2>Componentes Clave para el Enrutamiento</h2>
+        <h2>&#8594; Componentes Clave para el Enrutamiento</h2>
         <p>Angular proporciona varios componentes y directivas útiles para el enrutamiento:</p>
         <ul>
           <li>
@@ -71,21 +71,23 @@
           </li>
         </ul>
       
-        <h2>Navegación entre Vistas</h2>
+        <h2>&#8594; Navegación entre Vistas</h2>
         <p>
           La navegación entre vistas se hace mediante enlaces o programáticamente desde el código TypeScript. 
           Ejemplo de un enlace HTML:
         </p>
         <pre>
-          <code>
-      &lt;a routerLink=&quot;/about&quot; routerLinkActive=&quot;active&quot;&gt;Ir a About&lt;/a&gt;
+          <code class="code-1">
+
+  &lt;a routerLink=&quot;/about&quot; routerLinkActive=&quot;active&quot;&gt;Ir a About&lt;/a&gt;
           </code>
         </pre>
       
-        <h2>Navegación Programática</h2>
+        <h2>&#8594; Navegación Programática</h2>
         <p>También puedes navegar entre rutas usando el servicio <code>Router</code> en tu código TypeScript:</p>
         <pre>
-          <code>
+          <code class="code-1">
+
       import &#123; Router &#125; from &#39;&#64;angular/router&#39;;
       
       constructor(private router: Router) &#123; &#125;
@@ -96,13 +98,13 @@
           </code>
         </pre>
       
-        <h2>Protegiendo Rutas con Guards</h2>
+        <h2>&#8594; Protegiendo Rutas con Guards</h2>
         <p>
           Angular incluye una funcionalidad llamada **Guards** para proteger rutas. 
           Un ejemplo común es evitar que usuarios no autenticados accedan a ciertas páginas:
         </p>
         <pre>
-          <code>
+          <code class="code-1">
       import &#123; Injectable &#125; from &#39;&#64;angular/core&#39;;
       import &#123; CanActivate &#125; from &#39;&#64;angular/router&#39;;
       

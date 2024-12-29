@@ -7,29 +7,29 @@
 </head>
 <body>
     <div class="servicios-container">
-        <h1>Servicios e Inyección de Dependencias en Angular</h1>
+        <h1 class="servicios-title">Servicios e Inyección de Dependencias en Angular</h1>
         <p>
           En Angular, los servicios son una forma de organizar y compartir datos y lógica entre componentes. A menudo, los servicios son utilizados para realizar tareas como la comunicación con una API, gestión de datos o compartir estados entre componentes.
         </p>
         <hr class="separador-1">
       
-        <h2>¿Qué es un Servicio?</h2>
+        <h2 class="servicios-subtitle">&#8594; ¿Qué es un Servicio?</h2>
         <p>
           Un servicio es una clase de TypeScript que contiene lógica de negocio y se utiliza para compartir funcionalidades comunes entre diferentes partes de tu aplicación. Los servicios permiten que el código esté más organizado y reutilizable.
         </p>
         
-        <h2>Inyección de Dependencias</h2>
+        <h2 class="servicios-subtitle">&#8594; Inyección de Dependencias</h2>
         <p>
           Angular utiliza un patrón conocido como **Inyección de Dependencias (DI)** para gestionar los servicios y sus dependencias. DI es un patrón que permite que los objetos sean creados e inyectados en las clases que los necesitan sin que estas clases tengan que encargarse de crearlos.
         </p>
       
-        <h3>Creando un Servicio</h3>
+        <h3 class="subtitle-2">Creando un Servicio</h3>
         <p>
           Para crear un servicio en Angular, puedes usar el siguiente comando en la terminal:
         </p>
-        <pre>
-          ng generate service nombre-del-servicio
-        </pre>
+        <pre><code class="code-1">
+        ng generate service nombre-del-servicio
+        </code></pre>
         <p>
           Esto creará un archivo de servicio en la carpeta `src/app` de tu proyecto. Un servicio básico podría lucir como esto:
         </p>
@@ -38,57 +38,92 @@
         <p>
           Aquí tienes un ejemplo de un servicio que proporciona datos de productos:
         </p>
-        <pre>
-          <span class="comentario">// producto.service.ts</span>
+        <pre><code class="code-1">
+    <span class="comentario">// producto.service.ts</span>
+
+      &#64;Injectable(&#123;
+        providedIn: &#39;root&#39;
+        &#125;)
+      export class ProductoService &#123;
+        private productos = &#91; &#123; id: 1, nombre: &#39;Producto A&#39;, precio: 100 &#125;, &#123; id: 2, nombre: &#39;Producto B&#39;, precio: 150 &#125; &#93;;
+
+        obtenerProductos() &#123;
+          return this.productos;
+          &#125;
+        &#125;
           
-        </pre>
+        </code></pre>
       
-        <h3>Inyectando el Servicio en un Componente</h3>
+        <h3 class="subtitle-2">Inyectando el Servicio en un Componente</h3>
         <p>
           Una vez que tienes tu servicio creado, puedes inyectarlo en un componente utilizando el constructor del componente. Por ejemplo:
         </p>
-        <pre>
-          <span class="comentario">// app.component.ts</span>
+        <pre><code class="code-1">
+  <span class="comentario">// app.component.ts</span>
+
+    import &#64;Component(&#123;
+    selector: &#39;app-root&#39;,
+    templateUrl: &#39;./app.component.html&#39;,
+    styleUrls: &#39;./app.component.css&#39;
+    &#125;)
+    export class AppComponent &#123;
+    productos: any;
+
+    constructor(private productoService: ProductoService) &#123;
+      this.productos = this.productoService.obtenerProductos();
+        &#125;
+      &#125;
          
-        </pre>
+        </code></pre>
       
         <p>
           En este caso, el servicio <strong>ProductoService</strong> es inyectado en el componente <strong>AppComponent</strong> a través del constructor. Luego, el método <strong>obtenerProductos()</strong> es utilizado para obtener una lista de productos.
         </p>
       
-        <h3>El Decorador &#64;Injectable</h3>
+        <h3 class="subtitle-2">El Decorador &#64;Injectable</h3>
         <p>
           El decorador <strong>&#64;Injectable()</strong> se utiliza para marcar la clase de servicio como inyectable. Esto permite que Angular gestione la instancia del servicio y la inyecte en otros componentes o servicios cuando sea necesario. El decorador <strong>providedIn: 'root'</strong> significa que el servicio está disponible de forma global en toda la aplicación.
         </p>
       
-        <h2>Servicios con Dependencias</h2>
+        <h2 class="servicios-subtitle">&#8594; Servicios con Dependencias</h2>
         <p>
           Un servicio puede tener dependencias que también deben ser inyectadas. Por ejemplo, si tu servicio necesita realizar peticiones HTTP, puedes inyectar el servicio <strong>HttpClient</strong> de Angular en tu servicio:
         </p>
-        <pre>
-          <span class="comentario">// producto.service.ts</span>
+        <pre><code class="code-1">
+    <span class="comentario">// producto.service.ts</span>
+
+      import &#64;Injectable(&#123;
+      providedIn: &#39;root&#39;
+      &#125;)
+      export class ProductoService &#123;
+      constructor(private http: HttpClient) &#123;
+
+      obtenerProductos() &#123;
+      return this.http.get(&#39;https://api.example.com/productos&#39;);
+       &#125;
+      &#125;
          
-        </pre>
+        </code></pre>
       
         <p>
           En este ejemplo, el servicio <strong>HttpClient</strong> se inyecta en el servicio <strong>ProductoService</strong> para realizar una solicitud HTTP y obtener productos desde una API externa.
         </p>
       
-        <h3>Uso de Servicios en el HTML</h3>
+        <h3 class="subtitle-2">Uso de Servicios en el HTML</h3>
         <p>
           Una vez que el servicio está inyectado en el componente, los datos del servicio pueden ser utilizados en el HTML. Por ejemplo, para mostrar los productos obtenidos en la vista:
         </p>
-        <pre>
+        <pre><code class="code-1">
+   &#60;div&#62;
+     &#60;ul&#62;
+       &#60;li *ngFor=&#34;let producto of productos&#34;&#62;
+           &#60;span&#62;{{ 'producto.nombre'}}&#60;/span&#62; - &#60;span&#62;{{ 'producto.precio' }}&#60;/span&#62;
+       &#60;/li&#62;
+     &#60;/ul&#62;
+   &#60;/div&#62;
           
-        </pre>
+        </code></pre>
       
-        <h2>Resumen</h2>
-        <ul>
-          <li>Los servicios son clases que proporcionan funcionalidades reutilizables.</li>
-          <li>Angular usa la Inyección de Dependencias (DI) para gestionar la creación y uso de los servicios.</li>
-          <li>El decorador <strong>&#64;Injectable</strong> marca una clase como inyectable.</li>
-          <li>Los servicios pueden tener dependencias como el servicio <strong>HttpClient</strong> para realizar peticiones HTTP.</li>
-        </ul>
       </div>
       
 </body>

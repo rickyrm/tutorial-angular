@@ -1,1 +1,60 @@
-<p>funcionamiento works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionamiento</title>
+</head>
+<body>
+    <div class="funcionamiento-container">
+        <h1 class="funcionamiento-title">Funcionamiento</h1>
+        
+        <section class="funcionamiento-details">
+          <h2 class="section-title">&#8594; Explicación del funcionamiento del framework</h2>
+
+          <hr>
+          <h3>¿Actúa sobre páginas, ficheros, secciones…?</h3>
+          <p>Angular actúa principalmente sobre componentes, que son las unidades básicas de construcción en el framework. Cada componente controla una vista específica (una parte de la interfaz de usuario) y está asociado a un archivo HTML, un archivo CSS/SCSS y un archivo TypeScript.</p>
+          <p>Además, Angular también utiliza módulos para agrupar componentes relacionados y servicios para manejar la lógica de negocio y compartir datos entre diferentes partes de la aplicación.</p>
+
+          <hr>
+          <h3>¿Cómo se editan/modifican los ficheros que actúan en el framework?</h3>
+          <ol>
+            <li><strong>Editar componentes:</strong>
+              <p>Los componentes se editan modificando sus archivos correspondientes:</p>
+              <ul>
+                <li><code>.html</code>: Define la estructura y el contenido visual.</li>
+                <li><code>.ts</code>: Contiene la lógica del componente.</li>
+                <li><code>.css/.scss</code>: Define el estilo visual.</li>
+              </ul>
+              <p>Por ejemplo, para modificar el contenido visual de un componente, edita su archivo <code>component.html</code>.</p>
+            </li>
+            <li><strong>Servicios y lógica compartida:</strong>
+              <p>Los servicios se encuentran en archivos <code>.ts</code> y se utilizan para encapsular lógica y datos que se comparten entre diferentes componentes. Puedes modificarlos según sea necesario para adaptarlos a las necesidades de tu aplicación.</p>
+            </li>
+            <li><strong>Otros archivos:</strong>
+              <p>El archivo <code>angular.json</code> permite configurar opciones globales del proyecto, como rutas, estilos y scripts adicionales.</p>
+            </li>
+          </ol>
+
+          <hr>
+          <h3>¿Cómo se referencian los ficheros creados desde otras aplicaciones (si es el caso)?</h3>
+          <p>En Angular, los ficheros no se referencian directamente desde otras aplicaciones como en el caso de librerías tradicionales. Sin embargo, se pueden crear bibliotecas reutilizables dentro de un proyecto Angular que luego pueden compartirse e instalarse en otros proyectos. Esto se hace siguiendo estos pasos:</p>
+          <ol>
+            <li><strong>Crear una biblioteca:</strong>
+              <p>Usa el comando <code>ng generate library mi-biblioteca</code> para generar una nueva biblioteca.</p>
+            </li>
+            <li><strong>Compilar la biblioteca:</strong>
+              <p>Ejecuta <code>ng build mi-biblioteca</code> para compilarla y generar los paquetes necesarios.</p>
+            </li>
+            <li><strong>Publicar la biblioteca:</strong>
+              <p>Publica la biblioteca en un registro de paquetes, como npm, o compártela localmente.</p>
+            </li>
+            <li><strong>Usar la biblioteca en otro proyecto:</strong>
+              <p>Instala la biblioteca en el nuevo proyecto con <code>npm install mi-biblioteca</code> y luego impórtala en los módulos donde se necesite.</p>
+            </li>
+          </ol>
+        </section>
+    </div>
+</body>
+</html>
